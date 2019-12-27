@@ -28,4 +28,12 @@ class ScrollingActivity : AppCompatActivity() {
         }
         fab_label_radio_group.check(R.id.use_short_text)
     }
+
+    override fun onBackPressed() {
+        if (fab.isExtended) {
+            fab.shrink()
+        } else {
+            fab.extend()
+        }
+    }
 }

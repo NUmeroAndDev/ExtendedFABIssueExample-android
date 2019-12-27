@@ -6,14 +6,11 @@
 
 ## This is bug?
 
-When scrolling upward by linking CollapsingToolbar and ExtendedFAB, ExtendedFAB moves down for a moment.  
+ExtendedFAB size does not adjust when shrink/extended ExtendedFAB text is changed.
 
 
-- Happens when device is in landscape orientation.  
-- Happens when the content view is RecyclerView.  
-Does not happen when using NestedScrollView.
-- Happens only for ExtendedFAB.  
-Does not happen in FAB.
+- Happens in ExtendedFAB once shrink/extended.
+- Happens when with or without CollapsingToolbar.
 
 ## Screen
 
