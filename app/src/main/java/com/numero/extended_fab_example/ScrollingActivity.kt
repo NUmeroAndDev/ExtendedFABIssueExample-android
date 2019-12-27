@@ -15,24 +15,17 @@ class ScrollingActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_scrolling)
         setSupportActionBar(toolbar)
-        recycler_view.apply {
-            layoutManager = LinearLayoutManager(this@ScrollingActivity)
-            adapter = ExampleAdapter()
+
+        fab_label_radio_group.setOnCheckedChangeListener { group, checkedId ->
+            when (checkedId) {
+                R.id.use_short_text -> {
+                    fab.text = "Example"
+                }
+                R.id.use_long_text -> {
+                    fab.text = "Long Example"
+                }
+            }
         }
+        fab_label_radio_group.check(R.id.use_short_text)
     }
-}
-
-class ExampleAdapter : RecyclerView.Adapter<ExampleAdapter.ItemViewHolder>() {
-
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_view, parent, false)
-        return ItemViewHolder(view)
-    }
-
-    override fun getItemCount(): Int = 30
-
-    override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
-    }
-
-    class ItemViewHolder(view: View) : RecyclerView.ViewHolder(view)
 }
